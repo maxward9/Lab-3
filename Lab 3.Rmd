@@ -1,0 +1,20 @@
+---
+title: "Lab 3"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+source("http://www.openintro.org/stat/data/cdc.R")
+cdc <- as_tibble(cdc)
+```
+
+```{r echo = TRUE, message = F, warning = F, eval = F}
+#Smoking ratio by gender
+ggplot(data = cdc) +
+  geom_bar(mapping = aes(x = smoke100, fill = gender))+
+  ggtitle('Smoking Males vs Female') +       
+  xlab('0 = No, 1 = Yes')   
+```
+
